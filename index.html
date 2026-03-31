@@ -12,13 +12,13 @@
     body {
       font-family: 'DejaVu Serif', Georgia, serif;
       background: #f4f6f9;
-      padding: 28px;
+      padding: 16px;
       margin: 0;
       color: #333;
     }
 
     .card {
-      width: 80%;
+      width: 100%;
       margin: 0 auto;
       background: #fff;
       border-radius: 12px;
@@ -29,34 +29,49 @@
     .header {
       background: #E72629;
       color: #fff;
-      padding: 24px 32px;
+      padding: 16px 20px;
     }
 
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .header-center {
       flex: 1;
       text-align: center;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 400;
       letter-spacing: 0.03em;
+      min-width: 120px;
     }
 
     .header-right {
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       opacity: 0.85;
       white-space: nowrap;
       text-align: right;
     }
 
     .santander-logo {
-      height: 40px;
+      height: 36px;
       width: auto;
       flex-shrink: 0;
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 8px; }
+      .header { padding: 12px 14px; }
+      .header-center { font-size: 0.85rem; }
+      .header-right { font-size: 0.70rem; }
+      .santander-logo { height: 28px; }
+      .body { padding: 10px 4px; }
+      .footer { padding: 10px 14px; font-size: 0.72rem; }
+      table { font-size: 0.70rem; min-width: 500px; }
+      .badge { font-size: 0.62rem; padding: 2px 5px; }
     }
 
     .header h1 {
@@ -70,7 +85,9 @@
     }
 
     .body {
-      padding: 28px 32px;
+      padding: 16px 8px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
     /* Section label */
@@ -92,20 +109,21 @@
 
     table {
       width: 100%;
+      min-width: 560px;
       border-collapse: collapse;
-      font-size: 0.9rem;
+      font-size: 0.78rem;
       margin-top: 4px;
     }
 
     /* Group headers */
     thead .group-row th {
       background: #f8f8f8;
-      font-size: 0.75rem;
+      font-size: 0.68rem;
       font-weight: 400;
       text-transform: uppercase;
       letter-spacing: 0.07em;
       color: #555;
-      padding: 10px 6px;
+      padding: 8px 4px;
       border-bottom: 1px solid #e0e0e0;
       border-right: 1px solid #e0e0e0;
       vertical-align: middle;
@@ -123,7 +141,7 @@
       font-size: 0.78rem;
       font-weight: 400;
       color: #666;
-      padding: 7px 6px;
+      padding: 5px 4px;
       border-bottom: 2px solid #e0e0e0;
       border-right: 1px solid #e0e0e0;
       vertical-align: bottom;
@@ -150,7 +168,7 @@
     }
 
     tbody td {
-      padding: 11px 6px;
+      padding: 8px 4px;
       vertical-align: middle;
       border-right: 1px solid #e0e0e0;
     }
@@ -184,7 +202,7 @@
     }
 
     tfoot td {
-      padding: 12px 6px;
+      padding: 9px 4px;
       font-weight: 400;
       font-size: 0.92rem;
       border-right: 1px solid #e0e0e0;
@@ -224,7 +242,7 @@
     }
 
     .footer {
-      padding: 16px 32px;
+      padding: 12px 16px;
       background: #f8f8f8;
       border-top: 1px solid #e8e8e8;
       font-size: 0.78rem;
