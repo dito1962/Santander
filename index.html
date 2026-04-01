@@ -9,12 +9,17 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
+    html {
+      font-size: 22px;
+    }
+
     body {
       font-family: 'DejaVu Serif', Georgia, serif;
       background: #f4f6f9;
       padding: 16px;
       margin: 0;
       color: #333;
+      font-size: 18px;
     }
 
     .card {
@@ -43,10 +48,13 @@
     .header-center {
       flex: 1;
       text-align: center;
-      font-size: 1rem;
+      font-size: 1.2rem;
       font-weight: 400;
       letter-spacing: 0.03em;
       min-width: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .header-right {
@@ -57,7 +65,7 @@
     }
 
     .santander-logo {
-      height: 36px;
+      height: 72px;
       width: auto;
       flex-shrink: 0;
     }
@@ -173,16 +181,21 @@
       border-right: 1px solid #e0e0e0;
     }
 
+    td.description {
+      padding-left: 12px;
+    }
+
     td.date {
       white-space: nowrap;
       color: #555;
       font-size: 0.85rem;
     }
 
-    td.amount, td.contrib {
-      text-align: right;
+    td.amount, td.contrib, td.empty-contrib {
+      text-align: right !important;
       font-weight: 400;
       font-variant-numeric: tabular-nums;
+      padding-right: 10px;
     }
 
     td.contrib {
@@ -191,7 +204,6 @@
 
     td.empty-contrib {
       background: #fff9fa;
-      text-align: center;
       color: #ccc;
     }
 
@@ -229,16 +241,17 @@
       font-weight: 400;
       padding: 2px 8px;
       border-radius: 20px;
+      font-family: 'DejaVu Serif', Georgia, serif;
     }
 
     .badge-paiement {
-      background: #e8f4fd;
-      color: #1a6fa8;
+      background: none;
+      color: #000;
     }
 
     .badge-versement {
-      background: #e8fdf0;
-      color: #1a7a45;
+      background: none;
+      color: #000;
     }
 
     .footer {
@@ -294,14 +307,14 @@
             <th style="text-align:center;">Date</th>
             <th style="text-align:center; width:30%;">Description</th>
             <th style="text-align:center;">Type</th>
-            <th style="text-align:center; width:7%;">Montant</th>
-            <th style="text-align:center; width:7%;">Part</th>
-            <th class="contrib-col sep" style="text-align:center; width:7%;">Crédité</th>
-            <th class="contrib-col" style="text-align:center; width:7%;">Solde</th>
-            <th class="contrib-col sep" style="text-align:center; width:7%;">Crédité</th>
-            <th class="contrib-col" style="text-align:center; width:7%;">Solde</th>
-            <th class="contrib-col sep" style="text-align:center; width:7%;">Crédité</th>
-            <th class="contrib-col" style="text-align:center; width:7%;">Solde</th>
+            <th style="text-align:right; width:7%; padding-right:10px;">Montant</th>
+            <th style="text-align:right; width:7%; padding-right:10px;">Part</th>
+            <th class="contrib-col sep" style="text-align:right; width:7%; padding-right:10px;">Crédité</th>
+            <th class="contrib-col" style="text-align:right; width:7%; padding-right:10px;">Solde</th>
+            <th class="contrib-col sep" style="text-align:right; width:7%; padding-right:10px;">Crédité</th>
+            <th class="contrib-col" style="text-align:right; width:7%; padding-right:10px;">Solde</th>
+            <th class="contrib-col sep" style="text-align:right; width:7%; padding-right:10px;">Crédité</th>
+            <th class="contrib-col" style="text-align:right; width:7%; padding-right:10px;">Solde</th>
           </tr>
         </thead>
         <tbody>
@@ -319,8 +332,8 @@
             <td class="empty-contrib"></td>
           </tr>
           <tr>
-            <td class="date">23/03/2026</td>
-            <td>Impôts 2024</td>
+            <td class="date">17/03/2026</td>
+            <td class="description">Impôts 2024</td>
             <td><span class="badge badge-paiement">Paiement</span></td>
             <td class="amount">342,56</td>
             <td class="amount">114,19</td>
@@ -333,8 +346,8 @@
           </tr>
           <tr>
             <td class="date">24/03/2026</td>
-            <td class="dash">—</td>
-            <td><span class="badge badge-versement">Versement</span></td>
+            <td class="description">Versement Cristina</td>
+            <td><span class="badge badge-versement">Virement</span></td>
             <td class="amount dash">—</td>
             <td class="amount dash">—</td>
             <td class="empty-contrib sep">—</td>
@@ -342,6 +355,19 @@
             <td class="empty-contrib sep">—</td>
             <td class="empty-contrib">—</td>
             <td class="contrib sep">500,00</td>
+            <td class="empty-contrib">—</td>
+          </tr>
+          <tr>
+            <td class="date">01/04/2026</td>
+            <td class="description">Versement Isabel</td>
+            <td><span class="badge badge-versement">Virement</span></td>
+            <td class="amount dash">—</td>
+            <td class="amount dash">—</td>
+            <td class="empty-contrib sep">—</td>
+            <td class="empty-contrib">—</td>
+            <td class="contrib sep">500,00</td>
+            <td class="empty-contrib">—</td>
+            <td class="empty-contrib sep">—</td>
             <td class="empty-contrib">—</td>
           </tr>
           <tr>
@@ -361,13 +387,13 @@
         <tfoot>
           <tr>
             <td colspan="3" class="total-label">Total</td>
-            <td class="amount">342,56</td>
+            <td class="amount" style="font-weight:bold;">342,56</td>
             <td class="amount">114,19</td>
-            <td class="contrib sep">342,56</td>
+            <td class="contrib sep" style="font-weight:bold;">342,56</td>
             <td class="contrib">228,37</td>
-            <td class="contrib sep">0,00</td>
-            <td class="contrib negative">-114,19</td>
-            <td class="contrib sep">500,00</td>
+            <td class="contrib sep" style="font-weight:bold;">500,00</td>
+            <td class="contrib">385,81</td>
+            <td class="contrib sep" style="font-weight:bold;">500,00</td>
             <td class="contrib">385,81</td>
           </tr>
         </tfoot>
@@ -377,7 +403,7 @@
     <div class="footer">
       <span class="last-updated">
         <span class="dot"></span>
-        Dernière mise à jour : 31/03/2026 à 09:03
+        Dernière mise à jour : 01/04/2026 à 19:08
       </span>
     </div>
   </div>
