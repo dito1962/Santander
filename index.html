@@ -137,10 +137,14 @@
       vertical-align: middle;
     }
 
+    thead .group-row th.banque-header {
+      background: #f0f4ff;
+      color: #333;
+    }
+
     thead .group-row th.contrib-header {
       background: #fff5f7;
       color: #333;
-      border-left: 2px solid #EC0000;
     }
 
     /* Sub-headers */
@@ -153,18 +157,17 @@
       border-bottom: 2px solid #e0e0e0;
       border-right: 1px solid #e0e0e0;
       vertical-align: bottom;
+      text-align: center;
+    }
+
+    thead .sub-row th.banque-col {
+      background: #f0f4ff;
     }
 
     thead .sub-row th.contrib-col {
       background: #fff5f7;
     }
 
-    thead .sub-row th.contrib-col.sep,
-    td.contrib.sep,
-    td.empty-contrib.sep,
-    tfoot td.contrib.sep {
-      border-left: 2px solid #e0e0e0;
-    }
 
     tbody tr {
       border-bottom: 1px solid #f0f0f0;
@@ -195,6 +198,21 @@
       text-align: right !important;
       font-weight: 400;
       font-variant-numeric: tabular-nums;
+      padding-right: 10px;
+    }
+
+    td.banque {
+      background: #f0f4ff;
+      text-align: right !important;
+      font-weight: 400;
+      font-variant-numeric: tabular-nums;
+      padding-right: 10px;
+    }
+
+    td.empty-banque {
+      background: #f0f4ff;
+      color: #ccc;
+      text-align: right !important;
       padding-right: 10px;
     }
 
@@ -229,6 +247,10 @@
 
     tfoot td.negative {
       color: #b30000;
+    }
+
+    tfoot td.banque {
+      background: #dde6f5;
     }
 
     tfoot td.contrib {
@@ -295,43 +317,46 @@
     <div class="body">
       <table>
         <thead>
-          <!-- Row 1: Opérations | Dito | Isabel | Cristina -->
+          <!-- Row 1: Opérations | Banque | Contributeurs (Dito | Isabel | Cristina) -->
           <tr class="group-row">
             <th colspan="6" style="text-align:center;">Opérations</th>
-            <th colspan="2" class="contrib-header" style="text-align:center; border-left:2px solid #e0e0e0;">Dito</th>
-            <th colspan="2" class="contrib-header" style="text-align:center; border-left:2px solid #e0e0e0;">Isabel</th>
-            <th colspan="2" class="contrib-header" style="text-align:center; border-left:2px solid #e0e0e0;">Cristina</th>
+            <th colspan="2" class="banque-header" style="text-align:center;">Banque</th>
+            <th colspan="6" class="contrib-header" style="text-align:center;">Contributeurs</th>
           </tr>
-          <!-- Row 2: Date | Description | Type | Montant | Part | Crédité | Solde | Crédité | Solde | Crédité | Solde -->
+          <!-- Row 2: sub-group labels -->
+          <tr class="group-row">
+            <th colspan="6" style="background:#fff;"></th>
+            <th colspan="2" class="banque-header"></th>
+            <th colspan="2" class="contrib-header" style="text-align:center;">Dito</th>
+            <th colspan="2" class="contrib-header" style="text-align:center;">Isabel</th>
+            <th colspan="2" class="contrib-header" style="text-align:center;">Cristina</th>
+          </tr>
+          <!-- Row 3: column labels -->
           <tr class="sub-row">
-            <th style="text-align:center;">Date</th>
-            <th style="text-align:center; width:25%;">Description</th>
-            <th style="text-align:center; width:15%;">Bénéficiaire</th>
-            <th style="text-align:center;">Type</th>
-            <th style="text-align:right; width:7%; padding-right:10px;">Montant</th>
-            <th style="text-align:right; width:7%; padding-right:10px;">Part</th>
-            <th class="contrib-col sep" style="text-align:right; width:7%; padding-right:10px;">Crédité</th>
-            <th class="contrib-col" style="text-align:right; width:7%; padding-right:10px;">Solde</th>
-            <th class="contrib-col sep" style="text-align:right; width:7%; padding-right:10px;">Crédité</th>
-            <th class="contrib-col" style="text-align:right; width:7%; padding-right:10px;">Solde</th>
-            <th class="contrib-col sep" style="text-align:right; width:7%; padding-right:10px;">Crédité</th>
-            <th class="contrib-col" style="text-align:right; width:7%; padding-right:10px;">Solde</th>
+            <th>Date</th>
+            <th style="width:20%;">Description</th>
+            <th style="width:13%;">Bénéficiaire</th>
+            <th>Type</th>
+            <th style="width:6%; padding-right:10px;">Montant</th>
+            <th style="width:6%; padding-right:10px;">Part</th>
+            <th class="banque-col" style="width:6%; padding-right:10px;">Débit</th>
+            <th class="banque-col" style="width:6%; padding-right:10px;">Solde</th>
+            <th class="contrib-col" style="width:6%; padding-right:10px;">Crédit</th>
+            <th class="contrib-col" style="width:6%; padding-right:10px;">Solde</th>
+            <th class="contrib-col" style="width:6%; padding-right:10px;">Crédit</th>
+            <th class="contrib-col" style="width:6%; padding-right:10px;">Solde</th>
+            <th class="contrib-col" style="width:6%; padding-right:10px;">Crédit</th>
+            <th class="contrib-col" style="width:6%; padding-right:10px;">Solde</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td class="date"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="amount"></td>
-            <td class="amount"></td>
-            <td class="empty-contrib sep"></td>
-            <td class="empty-contrib"></td>
-            <td class="empty-contrib sep"></td>
-            <td class="empty-contrib"></td>
-            <td class="empty-contrib sep"></td>
-            <td class="empty-contrib"></td>
+            <td class="date"></td><td></td><td></td><td></td>
+            <td class="amount"></td><td class="amount"></td>
+            <td class="empty-banque"></td><td class="empty-banque"></td>
+            <td class="empty-contrib"></td><td class="empty-contrib"></td>
+            <td class="empty-contrib"></td><td class="empty-contrib"></td>
+            <td class="empty-contrib"></td><td class="empty-contrib"></td>
           </tr>
           <tr>
             <td class="date">17/03/2026</td>
@@ -340,39 +365,45 @@
             <td><span class="badge badge-paiement">Paiement</span></td>
             <td class="amount">342,56</td>
             <td class="amount">114,19</td>
-            <td class="contrib sep">342,56</td>
+            <td class="banque">342,56</td>
+            <td class="empty-banque">—</td>
+            <td class="contrib">114,19</td>
             <td class="empty-contrib">—</td>
-            <td class="empty-contrib sep">—</td>
             <td class="empty-contrib">—</td>
-            <td class="empty-contrib sep">—</td>
+            <td class="empty-contrib">—</td>
+            <td class="empty-contrib">—</td>
             <td class="empty-contrib">—</td>
           </tr>
           <tr>
             <td class="date">24/03/2026</td>
             <td class="description">Versement Cristina</td>
-            <td></td>
+            <td>Santander</td>
             <td><span class="badge badge-versement">Virement</span></td>
             <td class="amount dash">—</td>
             <td class="amount dash">—</td>
-            <td class="empty-contrib sep">—</td>
+            <td class="empty-banque">—</td>
+            <td class="empty-banque">—</td>
             <td class="empty-contrib">—</td>
-            <td class="empty-contrib sep">—</td>
             <td class="empty-contrib">—</td>
-            <td class="contrib sep">500,00</td>
+            <td class="empty-contrib">—</td>
+            <td class="empty-contrib">—</td>
+            <td class="contrib">500,00</td>
             <td class="empty-contrib">—</td>
           </tr>
           <tr>
             <td class="date">01/04/2026</td>
             <td class="description">Versement Isabel</td>
-            <td></td>
+            <td>Santander</td>
             <td><span class="badge badge-versement">Virement</span></td>
             <td class="amount dash">—</td>
             <td class="amount dash">—</td>
-            <td class="empty-contrib sep">—</td>
+            <td class="empty-banque">—</td>
+            <td class="empty-banque">—</td>
             <td class="empty-contrib">—</td>
-            <td class="contrib sep">500,00</td>
             <td class="empty-contrib">—</td>
-            <td class="empty-contrib sep">—</td>
+            <td class="contrib">500,00</td>
+            <td class="empty-contrib">—</td>
+            <td class="empty-contrib">—</td>
             <td class="empty-contrib">—</td>
           </tr>
           <tr>
@@ -382,11 +413,13 @@
             <td><span class="badge badge-paiement">Paiement</span></td>
             <td class="amount">145,20</td>
             <td class="amount">48,40</td>
-            <td class="contrib sep">145,20</td>
+            <td class="banque">145,20</td>
+            <td class="empty-banque">—</td>
+            <td class="contrib">48,40</td>
             <td class="empty-contrib">—</td>
-            <td class="empty-contrib sep">—</td>
             <td class="empty-contrib">—</td>
-            <td class="empty-contrib sep">—</td>
+            <td class="empty-contrib">—</td>
+            <td class="empty-contrib">—</td>
             <td class="empty-contrib">—</td>
           </tr>
           <tr>
@@ -396,39 +429,37 @@
             <td><span class="badge badge-paiement">Paiement</span></td>
             <td class="amount">699,44</td>
             <td class="amount">233,15</td>
-            <td class="contrib sep">699,44</td>
+            <td class="banque">699,44</td>
+            <td class="empty-banque">—</td>
+            <td class="contrib">233,15</td>
             <td class="empty-contrib">—</td>
-            <td class="empty-contrib sep">—</td>
             <td class="empty-contrib">—</td>
-            <td class="empty-contrib sep">—</td>
+            <td class="empty-contrib">—</td>
+            <td class="empty-contrib">—</td>
             <td class="empty-contrib">—</td>
           </tr>
           <tr>
-            <td class="date"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td class="amount"></td>
-            <td class="amount"></td>
-            <td class="empty-contrib sep"></td>
-            <td class="empty-contrib"></td>
-            <td class="empty-contrib sep"></td>
-            <td class="empty-contrib"></td>
-            <td class="empty-contrib sep"></td>
-            <td class="empty-contrib"></td>
+            <td class="date"></td><td></td><td></td><td></td>
+            <td class="amount"></td><td class="amount"></td>
+            <td class="empty-banque"></td><td class="empty-banque"></td>
+            <td class="empty-contrib"></td><td class="empty-contrib"></td>
+            <td class="empty-contrib"></td><td class="empty-contrib"></td>
+            <td class="empty-contrib"></td><td class="empty-contrib"></td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <td colspan="4" class="total-label">Total</td>
-            <td class="amount" style="font-weight:bold;">1 187,20</td>
+            <td class="amount">1 187,20</td>
             <td class="amount">395,73</td>
-            <td class="contrib sep" style="font-weight:bold;">1 187,20</td>
-            <td class="contrib">791,47</td>
-            <td class="contrib sep" style="font-weight:bold;">500,00</td>
-            <td class="contrib">104,27</td>
-            <td class="contrib sep" style="font-weight:bold;">500,00</td>
-            <td class="contrib">104,27</td>
+            <td class="banque">1 187,20</td>
+            <td class="banque" style="font-weight:bold;">208,53</td>
+            <td class="contrib">395,73</td>
+            <td class="contrib" style="font-weight:bold;">0,00</td>
+            <td class="contrib">500,00</td>
+            <td class="contrib" style="font-weight:bold;">104,27</td>
+            <td class="contrib">500,00</td>
+            <td class="contrib" style="font-weight:bold;">104,27</td>
           </tr>
         </tfoot>
       </table>
@@ -437,7 +468,7 @@
     <div class="footer">
       <span class="last-updated">
         <span class="dot"></span>
-        Dernière mise à jour : 17/04/2026
+        Dernière mise à jour : 18/04/2026
       </span>
     </div>
   </div>
