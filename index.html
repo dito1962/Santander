@@ -98,7 +98,6 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    /* Section label */
     .section-row {
       display: flex;
       gap: 12px;
@@ -123,7 +122,6 @@
       margin-top: 4px;
     }
 
-    /* Group headers */
     thead .group-row th {
       background: #f8f8f8;
       font-size: 0.68rem;
@@ -147,7 +145,6 @@
       color: #333;
     }
 
-    /* Sub-headers */
     thead .sub-row th {
       background: #fff;
       font-size: 0.78rem;
@@ -167,7 +164,6 @@
     thead .sub-row th.contrib-col {
       background: #fff5f7;
     }
-
 
     tbody tr {
       border-bottom: 1px solid #f0f0f0;
@@ -225,7 +221,6 @@
       color: #ccc;
     }
 
-    /* Total row */
     tfoot tr {
       background: #fdf0f2;
       border-top: 2px solid #EC0000;
@@ -317,13 +312,11 @@
     <div class="body">
       <table>
         <thead>
-          <!-- Row 1: Opérations | Banque | Contributeurs (Dito | Isabel | Cristina) -->
           <tr class="group-row">
             <th colspan="6" style="text-align:center;">Opérations</th>
             <th colspan="3" class="banque-header" style="text-align:center;">Banque</th>
             <th colspan="6" class="contrib-header" style="text-align:center;">Contributeurs</th>
           </tr>
-          <!-- Row 2: sub-group labels -->
           <tr class="group-row">
             <th colspan="6" style="background:#fff;"></th>
             <th colspan="3" class="banque-header"></th>
@@ -331,7 +324,6 @@
             <th colspan="2" class="contrib-header" style="text-align:center;">Isabel</th>
             <th colspan="2" class="contrib-header" style="text-align:center;">Cristina</th>
           </tr>
-          <!-- Row 3: column labels -->
           <tr class="sub-row">
             <th>Date</th>
             <th style="width:20%;">Description</th>
@@ -352,119 +344,84 @@
         </thead>
         <tbody>
           <tr>
-            <td class="date"></td><td></td><td></td><td></td>
-            <td class="amount"></td><td class="amount"></td>
-            <td class="empty-banque"></td><td class="empty-banque"></td><td class="empty-banque"></td>
-            <td class="empty-contrib"></td><td class="empty-contrib"></td>
-            <td class="empty-contrib"></td><td class="empty-contrib"></td>
-            <td class="empty-contrib"></td><td class="empty-contrib"></td>
-          </tr>
-          <tr>
             <td class="date">17/03/2026</td>
             <td class="description">Impôts 2024</td>
             <td>Agencia Tributaria</td>
             <td><span class="badge badge-paiement">Paiement</span></td>
-            <td class="amount">342,56</td>
-            <td class="amount">114,19</td>
-            <td class="banque">342,56</td>
-            <td class="banque">114,19</td>
-            <td class="empty-banque">—</td>
-            <td class="contrib">114,19</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
+            <td class="amount">342,56</td><td class="amount">114,19</td>
+            <td class="banque">342,56</td><td class="banque">114,19</td><td class="empty-banque">—</td>
+            <td class="contrib">114,19</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
           </tr>
           <tr>
             <td class="date">24/03/2026</td>
             <td class="description">Versement Cristina</td>
             <td>Santander</td>
             <td><span class="badge badge-versement">Virement</span></td>
-            <td class="amount dash">—</td>
-            <td class="amount dash">—</td>
-            <td class="empty-banque">—</td>
-            <td class="banque">500,00</td>
-            <td class="empty-banque">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="contrib">500,00</td>
-            <td class="empty-contrib">—</td>
+            <td class="amount dash">—</td><td class="amount dash">—</td>
+            <td class="empty-banque">—</td><td class="banque">500,00</td><td class="empty-banque">—</td>
+            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
+            <td class="contrib">500,00</td><td class="empty-contrib">—</td>
           </tr>
           <tr>
             <td class="date">01/04/2026</td>
             <td class="description">Versement Isabel</td>
             <td>Santander</td>
             <td><span class="badge badge-versement">Virement</span></td>
-            <td class="amount dash">—</td>
-            <td class="amount dash">—</td>
-            <td class="empty-banque">—</td>
-            <td class="banque">500,00</td>
-            <td class="empty-banque">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="contrib">500,00</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
+            <td class="amount dash">—</td><td class="amount dash">—</td>
+            <td class="empty-banque">—</td><td class="banque">500,00</td><td class="empty-banque">—</td>
+            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
+            <td class="contrib">500,00</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
           </tr>
           <tr>
             <td class="date">15/04/2026</td>
             <td class="description">Cheminée</td>
             <td>Autos Cuiña</td>
             <td><span class="badge badge-paiement">Paiement</span></td>
-            <td class="amount">145,20</td>
-            <td class="amount">48,40</td>
-            <td class="banque">145,20</td>
-            <td class="banque">48,40</td>
-            <td class="empty-banque">—</td>
-            <td class="contrib">48,40</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
+            <td class="amount">145,20</td><td class="amount">48,40</td>
+            <td class="banque">145,20</td><td class="banque">48,40</td><td class="empty-banque">—</td>
+            <td class="contrib">48,40</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
           </tr>
           <tr>
             <td class="date">17/04/2026</td>
             <td class="description">Gaz</td>
             <td>Primagas</td>
             <td><span class="badge badge-paiement">Paiement</span></td>
-            <td class="amount">699,44</td>
-            <td class="amount">233,15</td>
-            <td class="banque">699,44</td>
-            <td class="banque">233,15</td>
-            <td class="empty-banque">—</td>
-            <td class="contrib">233,15</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td>
+            <td class="amount">699,44</td><td class="amount">233,15</td>
+            <td class="banque">699,44</td><td class="banque">233,15</td><td class="empty-banque">—</td>
+            <td class="contrib">233,15</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
           </tr>
           <tr>
-            <td class="date"></td><td></td><td></td><td></td>
-            <td class="amount"></td><td class="amount"></td>
-            <td class="empty-banque"></td><td class="empty-banque"></td><td class="empty-banque"></td>
-            <td class="empty-contrib"></td><td class="empty-contrib"></td>
-            <td class="empty-contrib"></td><td class="empty-contrib"></td>
-            <td class="empty-contrib"></td><td class="empty-contrib"></td>
+            <td class="date">20/04/2026</td>
+            <td class="description">Versement Isabel</td>
+            <td>Santander</td>
+            <td><span class="badge badge-versement">Virement</span></td>
+            <td class="amount dash">—</td><td class="amount dash">—</td>
+            <td class="empty-banque">—</td><td class="banque">400,00</td><td class="empty-banque">—</td>
+            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
+            <td class="contrib">400,00</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <td colspan="4" class="total-label">Total</td>
-            <td class="amount">1 187,20</td>
+            <td class="amount">1&#160;187,20</td>
             <td class="amount">395,73</td>
-            <td class="banque">1 187,20</td>
-            <td class="banque">1 395,73</td>
-            <td class="banque" style="font-weight:bold;">208,54</td>
+            <td class="banque">1&#160;187,20</td>
+            <td class="banque">1&#160;795,73</td>
+            <td class="banque" style="font-weight:bold;">608,54</td>
             <td class="contrib">395,73</td>
             <td class="contrib" style="font-weight:bold;">0,00</td>
-            <td class="contrib">500,00</td>
-            <td class="contrib" style="font-weight:bold;">104,27</td>
+            <td class="contrib">900,00</td>
+            <td class="contrib" style="font-weight:bold;">504,27</td>
             <td class="contrib">500,00</td>
             <td class="contrib" style="font-weight:bold;">104,27</td>
           </tr>
@@ -475,7 +432,7 @@
     <div class="footer">
       <span class="last-updated">
         <span class="dot"></span>
-        Dernière mise à jour : 19/04/2026
+        Dernière mise à jour : 20/04/2026
       </span>
     </div>
   </div>
