@@ -8,11 +8,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dejavu-fonts-ttf@2.37.3/dejavu-serif.min.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html {
-      font-size: 22px;
-    }
-
+    html { font-size: 22px; }
     body {
       font-family: 'DejaVu Serif', Georgia, serif;
       background: #f4f6f9;
@@ -21,7 +17,6 @@
       color: #333;
       font-size: 18px;
     }
-
     .card {
       width: 100%;
       margin: 0 auto;
@@ -30,13 +25,11 @@
       box-shadow: 0 2px 16px rgba(0,0,0,0.09);
       overflow: hidden;
     }
-
     .header {
       background: #E72629;
       color: #fff;
       padding: 16px 20px;
     }
-
     .header-inner {
       display: flex;
       align-items: center;
@@ -44,7 +37,6 @@
       flex-wrap: wrap;
       gap: 8px;
     }
-
     .header-center {
       flex: 1;
       text-align: center;
@@ -56,20 +48,16 @@
       align-items: center;
       justify-content: center;
     }
-
     .header-right {
       font-size: 0.78rem;
-      opacity: 0.85;
       white-space: nowrap;
       text-align: right;
     }
-
     .santander-logo {
       height: 72px;
       width: auto;
       flex-shrink: 0;
     }
-
     @media (max-width: 480px) {
       body { padding: 8px; }
       .header { padding: 12px 14px; }
@@ -81,47 +69,19 @@
       table { font-size: 0.70rem; min-width: 500px; }
       .badge { font-size: 0.62rem; padding: 2px 5px; }
     }
-
-    .header h1 {
-      display: none;
-    }
-
-    .header .meta {
-      margin-top: 4px;
-      font-size: 0.82rem;
-      opacity: 0.85;
-    }
-
+    .header h1 { display: none; }
     .body {
       padding: 16px 8px;
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
     }
-
-    .section-row {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 6px;
-    }
-
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 400;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #EC0000;
-      border-bottom: 2px solid #EC0000;
-      padding-bottom: 3px;
-    }
-
     table {
       width: 100%;
-      min-width: 560px;
+      min-width: 700px;
       border-collapse: collapse;
       font-size: 0.78rem;
       margin-top: 4px;
     }
-
     thead .group-row th {
       background: #f8f8f8;
       font-size: 0.68rem;
@@ -130,24 +90,15 @@
       letter-spacing: 0.07em;
       color: #555;
       padding: 8px 4px;
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 2px solid #bbb;
       border-right: 1px solid #e0e0e0;
       vertical-align: middle;
     }
-
-    thead .group-row th.banque-header {
-      background: #f0f4ff;
-      color: #333;
-    }
-
-    thead .group-row th.contrib-header {
-      background: #fff5f7;
-      color: #333;
-    }
-
+    thead .group-row th.banque-header { background: #f0f4ff; color: #333; }
+    thead .group-row th.contrib-header { background: #fff5f7; color: #333; }
     thead .sub-row th {
       background: #fff;
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       font-weight: 400;
       color: #666;
       padding: 5px 4px;
@@ -156,47 +107,42 @@
       vertical-align: bottom;
       text-align: center;
     }
-
-    thead .sub-row th.banque-col {
-      background: #f0f4ff;
-    }
-
-    thead .sub-row th.contrib-col {
-      background: #fff5f7;
-    }
-
+    thead .sub-row th.banque-col { background: #f0f4ff; }
+    thead .sub-row th.contrib-col { background: #fff5f7; }
     tbody tr {
       border-bottom: 1px solid #f0f0f0;
       transition: background 0.15s;
     }
-
-    tbody tr:hover {
-      background: #fafafa;
-    }
-
+    tbody tr:hover { background: #fafafa; }
     tbody td {
       padding: 8px 4px;
       vertical-align: middle;
       border-right: 1px solid #e0e0e0;
     }
-
-    td.description {
-      padding-left: 12px;
+    td.sep-left, th.sep-left {
+      border-left: 2px solid #bbb !important;
     }
-
-    td.date {
-      white-space: nowrap;
-      color: #555;
-      font-size: 0.85rem;
-    }
-
+    td.description { padding-left: 12px; }
+    td.date { white-space: nowrap; color: #555; font-size: 0.85rem; }
     td.amount, td.contrib, td.empty-contrib {
       text-align: right !important;
       font-weight: 400;
       font-variant-numeric: tabular-nums;
       padding-right: 10px;
     }
-
+    td.delta {
+      text-align: center !important;
+      font-weight: 400;
+      font-variant-numeric: tabular-nums;
+      color: #777;
+      font-size: 0.72rem;
+    }
+    td.repartition {
+      text-align: center !important;
+      font-size: 0.70rem;
+      color: #555;
+      white-space: nowrap;
+    }
     td.banque {
       background: #f0f4ff;
       text-align: right !important;
@@ -204,54 +150,32 @@
       font-variant-numeric: tabular-nums;
       padding-right: 10px;
     }
-
     td.empty-banque {
       background: #f0f4ff;
       color: #ccc;
       text-align: right !important;
       padding-right: 10px;
     }
-
-    td.contrib {
-      background: #fff9fa;
-    }
-
-    td.empty-contrib {
-      background: #fff9fa;
-      color: #ccc;
-    }
-
+    td.contrib { background: #fff9fa; }
+    td.empty-contrib { background: #fff9fa; color: #ccc; }
     tfoot tr {
       background: #fdf0f2;
       border-top: 2px solid #EC0000;
     }
-
     tfoot td {
       padding: 9px 4px;
       font-weight: 400;
       font-size: 0.92rem;
       border-right: 1px solid #e0e0e0;
     }
-
     tfoot td.total-label {
       color: #EC0000;
       text-transform: uppercase;
       font-size: 0.8rem;
       letter-spacing: 0.05em;
     }
-
-    tfoot td.negative {
-      color: #b30000;
-    }
-
-    tfoot td.banque {
-      background: #dde6f5;
-    }
-
-    tfoot td.contrib {
-      background: #fde8ec;
-    }
-
+    tfoot td.banque { background: #dde6f5; text-align: right !important; padding-right: 10px; font-variant-numeric: tabular-nums; }
+    tfoot td.contrib { background: #fde8ec; text-align: right !important; padding-right: 10px; font-variant-numeric: tabular-nums; }
     .badge {
       display: inline-block;
       font-size: 0.72rem;
@@ -260,17 +184,8 @@
       border-radius: 20px;
       font-family: 'DejaVu Serif', Georgia, serif;
     }
-
-    .badge-paiement {
-      background: none;
-      color: #000;
-    }
-
-    .badge-versement {
-      background: none;
-      color: #000;
-    }
-
+    .badge-paiement { background: none; color: #000; }
+    .badge-versement { background: none; color: #000; }
     .footer {
       padding: 12px 16px;
       background: #E72629;
@@ -279,23 +194,31 @@
       color: #fff;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-end;
+      gap: 16px;
     }
-
+    .footer-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 0.78rem;
+      line-height: 1.5;
+      flex: 1;
+    }
     .last-updated {
       display: flex;
       align-items: center;
       gap: 6px;
+      white-space: nowrap;
     }
-
-    .last-updated .dot {
+    .dot {
       width: 7px;
       height: 7px;
       border-radius: 50%;
       background: #fff;
-      display: inline-block;
+      display: inline-flex;
+      flex-shrink: 0;
     }
-
     .dash { color: #ccc; }
   </style>
 </head>
@@ -305,7 +228,7 @@
       <div class="header-inner">
         <img class="santander-logo" src="data:image/jpeg;base64,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" alt="Santander logo">
         <div class="header-center">Suivi des paiements et contributions</div>
-        <div class="header-right">Création : mars 2026</div>
+        <div class="header-right">Dernière mise à jour&nbsp;: 02/05/2026</div>
       </div>
     </div>
 
@@ -313,33 +236,37 @@
       <table>
         <thead>
           <tr class="group-row">
-            <th colspan="6" style="text-align:center;">Opérations</th>
-            <th colspan="3" class="banque-header" style="text-align:center;">Banque</th>
-            <th colspan="6" class="contrib-header" style="text-align:center;">Contributeurs</th>
+            <th colspan="8" style="text-align:center;">Opérations</th>
+            <th colspan="3" class="banque-header sep-left" style="text-align:center;">Banque</th>
+            <th colspan="8" class="contrib-header sep-left" style="text-align:center;">Contributeurs</th>
           </tr>
           <tr class="group-row">
-            <th colspan="6" style="background:#fff;"></th>
-            <th colspan="3" class="banque-header"></th>
-            <th colspan="2" class="contrib-header" style="text-align:center;">Dito</th>
-            <th colspan="2" class="contrib-header" style="text-align:center;">Isabel</th>
-            <th colspan="2" class="contrib-header" style="text-align:center;">Cristina</th>
+            <th colspan="8" style="background:#fff;"></th>
+            <th colspan="3" class="banque-header sep-left"></th>
+            <th colspan="2" class="contrib-header sep-left" style="text-align:center;">Dito</th>
+            <th colspan="3" class="contrib-header sep-left" style="text-align:center;">Isabel</th>
+            <th colspan="3" class="contrib-header sep-left" style="text-align:center;">Cristina</th>
           </tr>
           <tr class="sub-row">
             <th>Date</th>
-            <th style="width:20%;">Description</th>
-            <th style="width:13%;">Bénéficiaire</th>
+            <th style="width:15%;">Description</th>
+            <th style="width:9%;">Bénéficiaire</th>
             <th>Type</th>
-            <th style="width:6%; padding-right:10px;">Montant</th>
-            <th style="width:6%; padding-right:10px;">Part</th>
-            <th class="banque-col" style="width:6%; padding-right:10px;">Débit</th>
-            <th class="banque-col" style="width:6%; padding-right:10px;">Crédit</th>
-            <th class="banque-col" style="width:6%; padding-right:10px;">Solde</th>
-            <th class="contrib-col" style="width:6%; padding-right:10px;">Crédit</th>
-            <th class="contrib-col" style="width:6%; padding-right:10px;">Solde</th>
-            <th class="contrib-col" style="width:6%; padding-right:10px;">Crédit</th>
-            <th class="contrib-col" style="width:6%; padding-right:10px;">Solde</th>
-            <th class="contrib-col" style="width:6%; padding-right:10px;">Crédit</th>
-            <th class="contrib-col" style="width:6%; padding-right:10px;">Solde</th>
+            <th style="padding-right:10px;">Montant</th>
+            <th style="padding-right:10px;">Quote-part</th>
+            <th>ℹ️ Delta</th>
+            <th>ℹ️ Rotation</th>
+            <th class="banque-col sep-left" style="padding-right:10px;">Débit</th>
+            <th class="banque-col" style="padding-right:10px;">Crédit</th>
+            <th class="banque-col" style="padding-right:10px;">Solde</th>
+            <th class="contrib-col sep-left" style="padding-right:10px;">Débit</th>
+            <th class="contrib-col" style="padding-right:10px;">Crédit</th>
+            <th class="contrib-col sep-left" style="padding-right:10px;">Débit</th>
+            <th class="contrib-col" style="padding-right:10px;">Crédit</th>
+            <th class="contrib-col" style="padding-right:10px;">Solde</th>
+            <th class="contrib-col sep-left" style="padding-right:10px;">Débit</th>
+            <th class="contrib-col" style="padding-right:10px;">Crédit</th>
+            <th class="contrib-col" style="padding-right:10px;">Solde</th>
           </tr>
         </thead>
         <tbody>
@@ -348,11 +275,12 @@
             <td class="description">Impôts 2024</td>
             <td>Agencia Tributaria</td>
             <td><span class="badge badge-paiement">Paiement</span></td>
-            <td class="amount">342,56</td><td class="amount">114,19</td>
-            <td class="banque">342,56</td><td class="banque">114,18</td><td class="empty-banque">—</td>
-            <td class="contrib">114,18</td><td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
+            <td class="amount">342,56</td><td class="amount">114,18</td>
+            <td class="delta">2</td><td class="repartition">Dito-Isabel</td>
+            <td class="banque sep-left">342,56</td><td class="banque">114,19</td><td class="banque" style="color:#b30000;">-228,37</td>
+            <td class="contrib sep-left">114,19</td><td class="contrib">114,18</td>
+            <td class="contrib sep-left">114,19</td><td class="empty-contrib">—</td><td class="contrib" style="color:#b30000;">-114,19</td>
+            <td class="contrib sep-left">114,18</td><td class="empty-contrib">—</td><td class="contrib" style="color:#b30000;">-114,18</td>
           </tr>
           <tr>
             <td class="date">24/03/2026</td>
@@ -360,10 +288,11 @@
             <td>Santander</td>
             <td><span class="badge badge-versement">Virement</span></td>
             <td class="amount dash">—</td><td class="amount dash">—</td>
-            <td class="empty-banque">—</td><td class="banque">500,00</td><td class="empty-banque">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
-            <td class="contrib">500,00</td><td class="empty-contrib">—</td>
+            <td class="delta">—</td><td class="repartition">—</td>
+            <td class="empty-banque sep-left">—</td><td class="banque">500,00</td><td class="banque">271,63</td>
+            <td class="empty-contrib sep-left">—</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib sep-left">—</td><td class="empty-contrib">—</td><td class="contrib" style="color:#b30000;">-114,19</td>
+            <td class="empty-contrib sep-left">—</td><td class="contrib">500,00</td><td class="contrib">385,82</td>
           </tr>
           <tr>
             <td class="date">01/04/2026</td>
@@ -371,10 +300,11 @@
             <td>Santander</td>
             <td><span class="badge badge-versement">Virement</span></td>
             <td class="amount dash">—</td><td class="amount dash">—</td>
-            <td class="empty-banque">—</td><td class="banque">500,00</td><td class="empty-banque">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
-            <td class="contrib">500,00</td><td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
+            <td class="delta">—</td><td class="repartition">—</td>
+            <td class="empty-banque sep-left">—</td><td class="banque">500,00</td><td class="banque">771,63</td>
+            <td class="empty-contrib sep-left">—</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib sep-left">—</td><td class="contrib">500,00</td><td class="contrib">385,81</td>
+            <td class="empty-contrib sep-left">—</td><td class="empty-contrib">—</td><td class="contrib">385,82</td>
           </tr>
           <tr>
             <td class="date">15/04/2026</td>
@@ -382,21 +312,23 @@
             <td>Autos Cuiña</td>
             <td><span class="badge badge-paiement">Paiement</span></td>
             <td class="amount">145,20</td><td class="amount">48,40</td>
-            <td class="banque">145,20</td><td class="banque">48,40</td><td class="empty-banque">—</td>
-            <td class="contrib">48,40</td><td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
+            <td class="delta">0</td><td class="repartition">—</td>
+            <td class="banque sep-left">145,20</td><td class="banque">48,40</td><td class="banque">674,83</td>
+            <td class="contrib sep-left">48,40</td><td class="contrib">48,40</td>
+            <td class="contrib sep-left">48,40</td><td class="empty-contrib">—</td><td class="contrib">337,41</td>
+            <td class="contrib sep-left">48,40</td><td class="empty-contrib">—</td><td class="contrib">337,42</td>
           </tr>
           <tr>
             <td class="date">17/04/2026</td>
             <td class="description">Gaz</td>
             <td>Primagas</td>
             <td><span class="badge badge-paiement">Paiement</span></td>
-            <td class="amount">699,44</td><td class="amount">233,15</td>
-            <td class="banque">699,44</td><td class="banque">233,14</td><td class="empty-banque">—</td>
-            <td class="contrib">233,14</td><td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
+            <td class="amount">699,44</td><td class="amount">233,14</td>
+            <td class="delta">2</td><td class="repartition">Isabel-Cristina</td>
+            <td class="banque sep-left">699,44</td><td class="banque">233,14</td><td class="banque">208,53</td>
+            <td class="contrib sep-left">233,14</td><td class="contrib">233,14</td>
+            <td class="contrib sep-left">233,15</td><td class="empty-contrib">—</td><td class="contrib">104,26</td>
+            <td class="contrib sep-left">233,15</td><td class="empty-contrib">—</td><td class="contrib">104,27</td>
           </tr>
           <tr>
             <td class="date">20/04/2026</td>
@@ -404,10 +336,11 @@
             <td>Santander</td>
             <td><span class="badge badge-versement">Virement</span></td>
             <td class="amount dash">—</td><td class="amount dash">—</td>
-            <td class="empty-banque">—</td><td class="banque">400,00</td><td class="empty-banque">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
-            <td class="contrib">400,00</td><td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
+            <td class="delta">—</td><td class="repartition">—</td>
+            <td class="empty-banque sep-left">—</td><td class="banque">400,00</td><td class="banque">608,53</td>
+            <td class="empty-contrib sep-left">—</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib sep-left">—</td><td class="contrib">400,00</td><td class="contrib">504,26</td>
+            <td class="empty-contrib sep-left">—</td><td class="empty-contrib">—</td><td class="contrib">104,27</td>
           </tr>
           <tr>
             <td class="date">20/04/2026</td>
@@ -415,10 +348,11 @@
             <td>Santander</td>
             <td><span class="badge badge-versement">Virement</span></td>
             <td class="amount dash">—</td><td class="amount dash">—</td>
-            <td class="empty-banque">—</td><td class="banque">400,00</td><td class="empty-banque">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
-            <td class="contrib">400,00</td><td class="empty-contrib">—</td>
+            <td class="delta">—</td><td class="repartition">—</td>
+            <td class="empty-banque sep-left">—</td><td class="banque">400,00</td><td class="banque">1&nbsp;008,53</td>
+            <td class="empty-contrib sep-left">—</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib sep-left">—</td><td class="empty-contrib">—</td><td class="contrib">504,26</td>
+            <td class="empty-contrib sep-left">—</td><td class="contrib">400,00</td><td class="contrib">504,27</td>
           </tr>
           <tr>
             <td class="date">29/04/2026</td>
@@ -426,21 +360,23 @@
             <td>Santander</td>
             <td><span class="badge badge-versement">Virement</span></td>
             <td class="amount dash">—</td><td class="amount dash">—</td>
-            <td class="empty-banque">—</td><td class="banque">350,00</td><td class="empty-banque">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
-            <td class="contrib">350,00</td><td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
+            <td class="delta">—</td><td class="repartition">—</td>
+            <td class="empty-banque sep-left">—</td><td class="banque">350,00</td><td class="banque">1&nbsp;358,53</td>
+            <td class="empty-contrib sep-left">—</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib sep-left">—</td><td class="contrib">350,00</td><td class="contrib">854,26</td>
+            <td class="empty-contrib sep-left">—</td><td class="empty-contrib">—</td><td class="contrib">504,27</td>
           </tr>
           <tr>
             <td class="date">29/04/2026</td>
             <td class="description">Remboursement CNAV (mars 2026)</td>
             <td>BBVA</td>
-            <td><span class="badge badge-versement">Virement</span></td>
-            <td class="amount">1&#160;001,76</td><td class="amount">333,92</td>
-            <td class="banque">1&#160;001,76</td><td class="banque">333,92</td><td class="empty-banque">—</td>
-            <td class="contrib">333,92</td><td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
+            <td><span class="badge badge-paiement">Paiement</span></td>
+            <td class="amount">1&nbsp;001,76</td><td class="amount">333,92</td>
+            <td class="delta">0</td><td class="repartition">—</td>
+            <td class="banque sep-left">1&nbsp;001,76</td><td class="banque">333,92</td><td class="banque">690,69</td>
+            <td class="contrib sep-left">333,92</td><td class="contrib">333,92</td>
+            <td class="contrib sep-left">333,92</td><td class="empty-contrib">—</td><td class="contrib">520,34</td>
+            <td class="contrib sep-left">333,92</td><td class="empty-contrib">—</td><td class="contrib">170,35</td>
           </tr>
           <tr>
             <td class="date">30/04/2026</td>
@@ -448,36 +384,44 @@
             <td>Santander</td>
             <td><span class="badge badge-versement">Virement</span></td>
             <td class="amount dash">—</td><td class="amount dash">—</td>
-            <td class="empty-banque">—</td><td class="banque">350,00</td><td class="empty-banque">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
-            <td class="empty-contrib">—</td><td class="empty-contrib">—</td>
-            <td class="contrib">350,00</td><td class="empty-contrib">—</td>
+            <td class="delta">—</td><td class="repartition">—</td>
+            <td class="empty-banque sep-left">—</td><td class="banque">350,00</td><td class="banque">1&nbsp;040,69</td>
+            <td class="empty-contrib sep-left">—</td><td class="empty-contrib">—</td>
+            <td class="empty-contrib sep-left">—</td><td class="empty-contrib">—</td><td class="contrib">520,34</td>
+            <td class="empty-contrib sep-left">—</td><td class="contrib">350,00</td><td class="contrib">520,35</td>
+          </tr>
+        <tr style="height:36px;">
+            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            <td class="banque sep-left"></td><td class="banque"></td><td class="banque"></td>
+            <td class="contrib sep-left"></td><td class="contrib"></td>
+            <td class="contrib sep-left"></td><td class="contrib"></td><td class="contrib"></td>
+            <td class="contrib sep-left"></td><td class="contrib"></td><td class="contrib"></td>
           </tr>
         </tbody>
         <tfoot>
           <tr>
             <td colspan="4" class="total-label">Total</td>
-            <td class="amount">2&#160;188,96</td>
-            <td class="amount">729,66</td>
-            <td class="banque">2&#160;188,96</td>
-            <td class="banque">3&#160;229,64</td>
-            <td class="banque" style="font-weight:bold;">1&#160;040,68</td>
-            <td class="contrib">729,64</td>
-            <td class="contrib" style="font-weight:bold;">0,00</td>
-            <td class="contrib">1&#160;250,00</td>
-            <td class="contrib" style="font-weight:bold;">520,34</td>
-            <td class="contrib">1&#160;250,00</td>
-            <td class="contrib" style="font-weight:bold;">520,34</td>
+            <td class="amount" style="text-align:right;padding-right:10px;">2&nbsp;188,96</td>
+            <td class="amount" style="text-align:right;padding-right:10px;">729,64</td>
+            <td colspan="2"></td>
+            <td class="banque sep-left" style="text-align:right;padding-right:10px;">2&nbsp;188,96</td>
+            <td class="banque" style="text-align:right;padding-right:10px;">3&nbsp;229,65</td>
+            <td class="banque" style="text-align:right;padding-right:10px;font-weight:bold;">1&nbsp;040,69</td>
+            <td class="contrib sep-left" style="text-align:right;padding-right:10px;">729,65</td>
+            <td class="contrib" style="text-align:right;padding-right:10px;">729,64</td>
+            <td class="contrib sep-left" style="text-align:right;padding-right:10px;">729,66</td>
+            <td class="contrib" style="text-align:right;padding-right:10px;">1&nbsp;250,00</td>
+            <td class="contrib" style="text-align:right;padding-right:10px;font-weight:bold;">520,34</td>
+            <td class="contrib sep-left" style="text-align:right;padding-right:10px;">729,65</td>
+            <td class="contrib" style="text-align:right;padding-right:10px;">1&nbsp;250,00</td>
+            <td class="contrib" style="text-align:right;padding-right:10px;font-weight:bold;">520,35</td>
           </tr>
         </tfoot>
       </table>
     </div>
 
     <div class="footer">
-      <span class="last-updated">
-        <span class="dot"></span>
-        Dernière mise à jour : 30/04/2026
-      </span>
+      <div class="footer-note"><span style="font-size:1rem;line-height:1.5;flex-shrink:0;">ℹ️</span>Le montant à payer n'étant pas toujours divisible exactement par 3, la quote-part est systématiquement arrondie à la décimale inférieure. De ce fait, 1 ou 2 centimes résiduels, suivant le cas, doivent être absorbés à tour de rôle par les contributeurs. Cependant, sur la durée, chacun paie ni plus ni moins que sa juste part.</div>
     </div>
   </div>
 </body>
